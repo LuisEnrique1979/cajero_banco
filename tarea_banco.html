@@ -1,0 +1,59 @@
+<html>
+<script>
+
+    let saldoU = 1000
+    let nip = 12345
+
+    function deposito() {
+        let cantidadADepositar = parseInt(prompt("Cuanto quieres depositar?"))
+        let nuevoSaldo = cantidadADepositar + saldoU
+        alert("Deposito exitoso, tu nuevo saldo es: " + nuevoSaldo)
+        saldoU = nuevoSaldo
+        menu()
+        console.log("Abonaste " + cantidadADepositar + " y tu nuevo saldo es " + saldoU)
+    }
+
+    function retiro() {
+        let cantidadARetirar = parseInt(prompt("Cuanto quieres retirar?"))
+        let nuevoSaldo = saldoU - cantidadARetirar
+        alert("Retiro exitoso, tu nuevo saldo es: " + nuevoSaldo)
+        saldoU = nuevoSaldo
+        menu()
+        console.log("Retiraste " + cantidadARetirar + " y tu nuevo saldo es " + saldoU)
+    }
+
+    function menu(operacion) {
+        switch (operacion) {
+            case "1":
+                deposito()
+                break;
+            case "2":
+                alert("Tu saldo es " + saldoU)
+                console.log("Tu saldo es " + saldoU)
+                break;
+            case "3":
+                retiro()
+                break;
+            case "4":
+                alert("Hasta luego")
+                break;
+        }
+    }
+
+    let usuarioNip = parseInt(prompt("Cual es tu NIP?"))
+
+    if (usuarioNip === nip) {
+        alert("Bienvenido")
+        console.log("Usuario " + usuarioNip)
+        let operacion = ""
+
+        while (operacion != 4) {
+            operacion = prompt("Que operacion quieres hacer? 1-Deposito 2-Saldo 3-Retiro 4-Salir")
+            menu(operacion)
+        }
+    } else {
+        alert("incorrecto")
+    }
+
+</script>
+</html>

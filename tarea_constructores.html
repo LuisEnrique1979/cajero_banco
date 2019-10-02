@@ -1,0 +1,27 @@
+<html>
+    <script>
+    
+
+    function Persona(nombre, edad, genero) {
+        this.nombre = nombre
+        this.edad = edad 
+        this.genero = genero
+    }
+
+let respuesta = "si"
+let usuario = []
+
+while (respuesta === "si") {
+    let nombre = prompt('Nombre de la persona')
+    let edad = prompt('Edad')
+    let genero = prompt('Genero')
+    
+    let p1 = new Persona(nombre, edad, genero)
+    console.log(p1)
+    usuario.push(p1)
+    respuesta = prompt("Quieres seguir registrando?")
+   }
+console.log(usuario)
+ 
+    </script>
+</html>
